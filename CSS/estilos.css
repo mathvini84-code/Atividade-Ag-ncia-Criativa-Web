@@ -4,3 +4,78 @@
     box-sizing: border-box;
 }
 
+@media (max-width: 767px) {
+   
+    #home {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .companyLogo {
+        width: 50%;
+        user-select: none;
+    }
+
+    .companyLogo img {
+        width: 100%;
+        user-select: none;
+    }
+
+    .hamburguer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        text-align: center;
+        font-size: 30px;
+        cursor: pointer;
+        margin-bottom: 5%;
+    }
+    
+    .navbar nav {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    #menuToggle {
+        display: none;
+    }
+
+    #menuToggle:checked + .hamburguer + nav {
+        display: flex;
+    }
+
+    .navbar ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+
+    }
+
+    .navbar ul a {
+        text-decoration: none;
+        color: #000000;
+    }
+    
+
+    .telephone {
+        margin: 10px 110px 5px 110px ;
+    }
+
+    .telephone a {
+        display: flex;
+        align-items: center;
+        gap: 3px;
+        text-decoration: none;
+        color: #000000;
+    }
+}
+
+

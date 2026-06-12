@@ -13,30 +13,33 @@
                     <img src="CSS/logo.png" alt="logo Agência Criativa Web" width="30%">
             </div>
                 <div class="navbar">
-                        <nav>
-                            <ul>
-                                <li><a href="#home" target="_self">Home</a></li>
-                                <li><a href="#aboutUs">Sobre nós</a></li>
-                                <li><a href="#services">Serviços</a></li>
-                                <li><a href="#reviews">Depoimentos</a></li>
-                                <li><a href="#contact">Contato</a></li>
-                                <p class="telephone">
-                                    <a href="https://wa.me/551199990000" target="_blank"><img src="CSS/whatsapp.png" style="margin: 5px 0 !important;" width="30" height="30" alt="entre em contato" title="Entre em contato">(11)9999-0000
-                                        <br>
-                                    </a>
-                                </p>
-                            </ul>
-                        </nav>
+                    <input type="checkbox" id="menuToggle">
+                        <label for="menuToggle" class="hamburguer">
+                            ☰
+                        </label>
+                            <nav>
+                                <ul>
+                                    <li><a href="#home" target="_self">Home</a></li>
+                                    <li><a href="#aboutUs">Sobre nós</a></li>
+                                    <li><a href="#services">Serviços</a></li>
+                                    <li><a href="#reviews">Depoimentos</a></li>
+                                    <li><a href="#contact">Contato</a></li>
+                                </ul>
+                                    <p class="telephone">
+                                        <a href="https://wa.me/551199990000" target="_blank"><img src="CSS/blackWhatsapp.png" style="margin: 5px 0 !important;" width="30" height="30" alt="entre em contato" title="Entre em contato">(11)9999-0000
+                                        </a>
+                                    </p>
+                            </nav>
                 </div>
         </header>
     </div>
     <main>
         <div class="welcomingBanner">
             <h2 class="welcomingHeading">Seja bem-vindo(a) à Agência Criativa Web!</h2>
-                <span><strong>Transformamos idéias criativas em estratégias digitais que geram resultados!</strong></span>
+                <span><strong>Transformamos ideias criativas em estratégias digitais que geram resultados!</strong></span>
         </div>
             <div id="aboutUs">
-                <h2 class="aboutUsHeading">Sobre nós</h2>
+                <h2 class="aboutUsHeading">Sobre a Agência</h2>
                     <p class="aboutUsText">Somos uma agência de marketing digital apaixonada por transformar ideias em experiências digitais de impacto.<br>
                     Na Agência Criativa Web, desenvolvemos estratégias criativas e soluções personalizadas para empresas que buscam crescer, fortalecer sua marca e conquistar novos clientes no ambiente online.<br>
                     Combinamos criatividade, tecnologia e estratégia para criar projetos que vão além do visual: entregamos resultados que geram conexão, presença digital e crescimento para o seu negócio.<br>
@@ -44,6 +47,15 @@
                     Ajudar marcas a evoluírem no mundo digital através de soluções inovadoras, eficientes e pensadas para cada objetivo.<br><br>
                     <strong>Agência Criativa Web — Criando conexões, construindo resultados.</strong>
                     </p>
+                    <img
+                        src="CSS/reuniao-agencia-640w.webp"
+                        srcset="
+                            CSS/reuniao-agencia-320w.webp 320w,
+                            CSS/reuniao-agencia-640w.webp 640w,
+                            CSS/reuniao-agencia-1200w.webp 1200w
+                        "
+                        sizes="100vw"
+                        alt="Equipe em reunião com apresentação da Agência Criativa Web">
             </div>
                 <div id="services">
                     <h2 class="servicesHeading">Serviços</h2>
@@ -125,13 +137,13 @@
                                             <input name="name" type="text" placeholder="Nome" required>
                                         </label>
                                         <label for="email">
-                                            <input name="email" type="text" placeholder="E-mail" required>
+                                            <input name="email" type="email" placeholder="E-mail" required>
                                         </label>
                                         <label for="company">
                                             <input name="company" type="text" placeholder="Empresa">
                                         </label>
                                         <label for="telephone">
-                                            <input name="telephone" type="text" placeholder="Telefone" required>
+                                            <input name="telephone" type="tel" placeholder="Telefone" required>
                                         </label>
                                         <!-- PARA ESTE BOTÃO, CRIAREI UM .JS SOMENTE PARA PREVINIR O COMPORTAMENTO PADRÃO DO FORMULÁRIO-->
                                         <button id="send" type="submit">Falar com especialista</button>
