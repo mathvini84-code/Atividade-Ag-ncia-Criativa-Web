@@ -1,0 +1,552 @@
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    background-color: #000000;
+}
+
+/* Header da página */
+
+.pageHeader {
+    margin: 0;
+    background-color: #f9f9f9;
+}
+
+#home {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.companyLogo {
+    width: 18%;
+    margin: 0;
+    user-select: none;
+}
+
+.companyLogo img {
+    width: 50%;
+    user-select: none;
+}
+
+.navbar {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#menuToggle {
+    display: none;
+}
+
+.hamburguer {
+    font-size: 30px;
+    cursor: pointer;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+    user-select: none;
+}
+
+.navbar nav {
+    display: none;
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#menuToggle:checked + .hamburguer + nav {
+    display: block;
+}
+
+.navbar ul {
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+    list-style: none;
+    margin: 0 30em 0 5em;
+    padding: 0;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #000000;
+    font-size: large;
+    padding: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    background-color: #0000003a;
+}
+
+/* Sessão Sobre */
+
+#aboutUs {
+    background-color: #f9f9f9;
+    margin-top: 1%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 40px 40px 40px ;
+    border-radius: 5px;
+}
+
+.aboutUsHeading {
+    margin-top: 20px;
+    letter-spacing: -1px;
+    font-size: 3em;
+}
+
+.aboutUsContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 70px;
+    font-size: 20px;
+}
+
+#aboutUs img {
+    width: 40%;
+    display: block;
+    border-radius: 60px;
+    border: 1px solid black;
+}
+
+/* Sessão de serviços */ 
+
+#services {
+    background-color: #f9f9f9;
+    margin-top: 1%;
+    padding: 60px 40px;
+    border-radius: 5px;
+}
+
+.servicesHeading {
+    font-size: 3rem;
+    margin-bottom: 50px;
+}
+
+.servicesAndDescriptions {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.servicesAndDescriptions details {
+    background: #f3eef8;
+    border-radius: 18px;
+    padding: 20px 28px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.servicesAndDescriptions details:hover {
+    transform: translateY(-5px);
+}
+
+.servicesAndDescriptions summary {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    list-style: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: 700;
+    user-select: none;
+}
+
+.servicesAndDescriptions summary::before {
+    content: "✓";
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #e4d8f8;
+    color: #5a2fc2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.servicesAndDescriptions p {
+    margin-top: -5px;
+    margin-left: 60px;
+    color: #444;
+    line-height: 1.7;
+    font-size: 1.1rem;
+}
+
+.servicesAndDescriptions details[open] {
+    background: #f8f4fd;
+}
+
+/* Sessão DEPOIMENTOS */
+
+#reviews {
+    background: #f9f9f9;
+    padding: 80px 60px;
+    margin-top: 1%;
+    border-radius: 5px;
+}
+
+.reviewHeading h2 {
+    margin-bottom: 50px;
+    font-size: 3rem;
+}
+
+.clientReview{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.firstReview,
+.secondReview,
+.thirdReview {
+    background: #ffffff;
+    border: 1px solid #d9d9d9;
+    border-radius: 16px;
+    padding: 35px;
+    transition: .3s;
+}
+
+.firstReview:hover,
+.secondReview:hover,
+.thirdReview:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.firstReview::before,
+.secondReview::before,
+.thirdReview::before {
+    content:"★★★★★";
+    display: block;
+    margin-bottom: 25px;
+    font-size: 22px;
+}
+
+.clientName {
+    display: block;
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
+
+.clientRole {
+    display: block;
+    color: grey;
+    margin-bottom: 20px;
+}
+
+.clientReview p {
+    line-height: 1.8;
+}
+
+/* Sessão Contato */ 
+
+#contact {
+    background: #f9f9f9;
+    padding: 80px 60px;
+    margin-top: 1%;
+    margin: 1% 200px 0 200px;
+    border-radius: 12px;
+}
+
+.contactHeading {
+    font-size: 3rem;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.contactForm {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.contactForm form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.contactForm input {
+    width: 100%;
+    padding: 18px;
+    border: 1px solid #d9d9d9;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: inherit;
+    outline: none;
+    transition: .2s;
+}
+
+.contactForm input:focus {
+    border-color: #6d28d9;
+    box-shadow: 0 0 10px rgba(109,40,217,.15);
+}
+
+#send{
+    grid-column: 1 / -1;
+    padding: 18px;
+    border: none;
+    border-radius: 12px;
+    background: #5a2fc2;
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .3s;
+}
+
+#send:hover {
+    transform: translateY(-2px);
+    background: #4a24a7;
+}
+
+/* RodaPé */ 
+
+footer {
+    margin-top: 60px;
+    background: linear-gradient(180deg, #0d0d0d, #000000);
+    color: #ffffff;
+    padding: 60px 80px 30px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.footerContent {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 50px;
+}
+
+
+.footerBrand h3 {
+    font-size: 2rem;
+    color: #8f65ff;
+    margin-bottom: 15px;
+}
+
+.footerBrand p {
+    color: #cfcfcf;
+    line-height: 1.8;
+    max-width: 420px;
+}
+
+.footerLinks h4,
+.footerContact h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.footerLinks a {
+    color: #bbbbbb;
+    text-decoration: none;
+    transition: .25s;
+    padding: 5px;
+}
+
+.footerLinks a:hover {
+    color: #8f65ff;
+    transform: translateX(5px);
+}
+
+.footerContact p a{
+    color: #bbbbbb;
+    text-decoration: none;
+}
+
+.footerContact p a:hover {
+    color: #8f65ff;
+    transform: translateX(5px);
+}
+
+.footerBottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 25px;
+    text-align: center;
+    color: #8d8d8d;
+    font-size: .95rem;
+}
+
+
+/* Mobile */
+
+
+@media (max-width: 767px){
+
+#home{
+    padding: 20px;
+}
+
+.companyLogo{
+    width: 35%;
+}
+
+    .companyLogo img{
+    width: 100%;
+}
+
+.navbar ul{
+    flex-direction: column;
+    gap: 13px;
+    margin: 0;
+}
+
+.navbar nav{
+    right: 70px;
+    
+}
+
+.hamburguer{
+    font-size: 38px;
+}
+
+#aboutUs{
+    padding: 30px;
+}
+
+.aboutUsHeading{
+    font-size: 2rem;
+}
+
+.aboutUsContent{
+    flex-direction: column;
+    gap: 40px;
+    font-size: 1rem;
+}
+
+#aboutUs img{
+    width: 100%;
+}
+
+#services{
+    padding: 40px 25px;
+}
+
+.servicesHeading{
+    font-size: 2rem;
+}
+
+.servicesAndDescriptions summary{
+    font-size: 1.1rem;
+}
+
+.servicesAndDescriptions p{
+    margin-left: 0;
+    margin-top: 15px;
+}
+
+#reviews{
+    padding: 40px 25px;
+}
+
+.reviewHeading h2{
+    font-size: 2rem;
+}
+
+.clientReview{
+    grid-template-columns: 1fr;
+}
+
+#contact{
+    margin: 1% 20px;
+    padding: 40px 25px;
+}
+
+.contactHeading{
+    font-size: 2rem;
+}
+
+.contactForm form{
+    grid-template-columns: 1fr;
+}
+
+footer{
+    padding: 40px 25px;
+}
+
+.footerContent{
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+}
+
+/* Tablets */
+
+@media (min-width:768px) and (max-width:1024px){
+
+.companyLogo{
+    width: 25%;
+}
+
+.navbar ul{
+    gap: 7px;
+    margin: 0 6rem;
+}
+
+.aboutUsContent{
+    flex-direction: column;
+    gap: 50px;
+}
+
+#aboutUs img{
+    width: 80%;
+}
+
+.clientReview{
+    grid-template-columns: repeat(2,1fr);
+}
+
+#contact{
+    margin: 1% 60px;
+}
+
+.contactForm form{
+    grid-template-columns: 1fr;
+}
+
+.footerContent{
+    grid-template-columns: 1fr 1fr;
+}
+}
+
+/* Notebooks */
+
+@media (min-width:1025px) and (max-width:1200px){
+
+.companyLogo{
+    width: 20%;
+ }
+
+.navbar ul{
+    gap: 50px;
+    margin: 0 10rem;
+}
+
+.aboutUsContent{
+    gap: 40px;
+    font-size: 18px;
+}
+
+#aboutUs img{
+    width: 45%;
+}
+
+.clientReview{
+    grid-template-columns: repeat(2,1fr);
+}
+
+#contact{
+    margin: 1% 100px;
+}
+}

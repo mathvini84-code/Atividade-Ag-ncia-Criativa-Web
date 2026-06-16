@@ -5,46 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agência Criativa Web</title>
     <link rel="stylesheet" href="CSS/estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="pageHeader">
         <header id="home">
             <div class="companyLogo">
-                    <img src="CSS/logo.png" alt="logo Agência Criativa Web" width="30%">
+                    <img src="CSS/logo.png" alt="logo Agência Criativa Web" width="100%">
             </div>
                 <div class="navbar">
-                        <nav>
-                            <ul>
-                                <li><a href="#home" target="_self">Home</a></li>
-                                <li><a href="#aboutUs">Sobre nós</a></li>
-                                <li><a href="#services">Serviços</a></li>
-                                <li><a href="#reviews">Depoimentos</a></li>
-                                <li><a href="#contact">Contato</a></li>
-                                <p class="telephone">
-                                    <a href="https://wa.me/551199990000" target="_blank"><img src="CSS/whatsapp.png" style="margin: 5px 0 !important;" width="30" height="30" alt="entre em contato" title="Entre em contato">(11)9999-0000
-                                        <br>
-                                    </a>
-                                </p>
-                            </ul>
-                        </nav>
+                    <input type="checkbox" id="menuToggle">
+                        <label for="menuToggle" class="hamburguer">
+                            ☰
+                        </label>
+                            <nav>
+                                <ul>
+                                    <li><a href="#home" target="_self">Home</a></li>
+                                    <li><a href="#aboutUs">Sobre</a></li>
+                                    <li><a href="#services">Serviços</a></li>
+                                    <li><a href="#reviews">Depoimentos</a></li>
+                                    <li><a href="#contact">Contato</a></li>
+                                </ul>
+                            </nav>
                 </div>
         </header>
     </div>
     <main>
-        <div class="welcomingBanner">
-            <h2 class="welcomingHeading">Seja bem-vindo(a) à Agência Criativa Web!</h2>
-                <span><strong>Transformamos idéias criativas em estratégias digitais que geram resultados!</strong></span>
-        </div>
             <div id="aboutUs">
-                <h2 class="aboutUsHeading">Sobre nós</h2>
+                <h2 class="aboutUsHeading">Sobre a Agência</h2>
+                    <div class="aboutUsContent">
                     <p class="aboutUsText">Somos uma agência de marketing digital apaixonada por transformar ideias em experiências digitais de impacto.<br>
                     Na Agência Criativa Web, desenvolvemos estratégias criativas e soluções personalizadas para empresas que buscam crescer, fortalecer sua marca e conquistar novos clientes no ambiente online.<br>
-                    Combinamos criatividade, tecnologia e estratégia para criar projetos que vão além do visual: entregamos resultados que geram conexão, presença digital e crescimento para o seu negócio.<br>
+                    Combinamos criatividade, tecnologia e estratégia para criar projetos que vão além do visual: entregamos resultados que geram conexão, presença digital e crescimento para o seu negócio.<br><br>
                     🚀 Nossa missão:<br>
                     Ajudar marcas a evoluírem no mundo digital através de soluções inovadoras, eficientes e pensadas para cada objetivo.<br><br>
                     <strong>Agência Criativa Web — Criando conexões, construindo resultados.</strong>
                     </p>
-            </div>
+                    <img
+                        src="CSS/reuniao-agencia-640w.webp"
+                        srcset="
+                            CSS/reuniao-agencia-320w.webp 320w,
+                            CSS/reuniao-agencia-640w.webp 640w,
+                            CSS/reuniao-agencia-1200w.webp 1200w
+                        "
+                        sizes="100vw"
+                        alt="Equipe em reunião com apresentação da Agência Criativa Web">
+                    </div>
+                </div>
                 <div id="services">
                     <h2 class="servicesHeading">Serviços</h2>
                         <div class="servicesAndDescriptions">
@@ -100,7 +109,7 @@
                             <h2>Depoimentos de clientes</h2>
                         </div>
                             <div class="clientReview">
-                                <div class="fistReview">
+                                <div class="firstReview">
                                 <span class="clientName"><strong>Rafael Monteiro</strong></span><br>
                                     <span class="clientRole"><strong>CEO & FOUNDER - Nexora Digital Solutions</strong></span>
                                         <p style="font-style: italic;">"A Agência Criativa Web superou nossas expectativas. Desde o início, entenderam a essência da nossa marca e transformaram nossas ideias em uma identidade visual moderna e estratégica. O profissionalismo, criatividade e atenção aos detalhes fizeram toda a diferença para fortalecer nossa presença digital."</p>
@@ -122,16 +131,16 @@
                                 <div class="contactForm">
                                     <form>
                                         <label for="name">
-                                            <input name="name" type="text" placeholder="Nome" required>
+                                            <input id="name" name="name" type="text" placeholder="Nome" required>
                                         </label>
                                         <label for="email">
-                                            <input name="email" type="text" placeholder="E-mail" required>
+                                            <input id="email" name="email" type="email" placeholder="E-mail" required>
                                         </label>
                                         <label for="company">
-                                            <input name="company" type="text" placeholder="Empresa">
+                                            <input id="company" name="company" type="text" placeholder="Empresa">
                                         </label>
                                         <label for="telephone">
-                                            <input name="telephone" type="text" placeholder="Telefone" required>
+                                            <input id="telephone" name="telephone" type="tel" placeholder="Telefone" required>
                                         </label>
                                         <!-- PARA ESTE BOTÃO, CRIAREI UM .JS SOMENTE PARA PREVINIR O COMPORTAMENTO PADRÃO DO FORMULÁRIO-->
                                         <button id="send" type="submit">Falar com especialista</button>
@@ -139,9 +148,30 @@
                                 </div>
                         </div>
     </main>
-        <footer>
-            <p><strong>&copy; 2026 Agência Criativa WEB. Todos os direitos reservados.</strong></p>
-        </footer>
+       <footer>
+    <div class="footerContent">
+        <div class="footerBrand">
+            <h3>Agência Criativa Web</h3>
+                <p>Criando conexões, construindo resultados.</p>
+        </div>
+            <div class="footerLinks">
+                <h4>Navegação</h4>
+                    <a href="#home">Home</a>
+                    <a href="#aboutUs">Sobre</a>
+                    <a href="#services">Serviços</a>
+                    <a href="#reviews">Depoimentos</a>
+                    <a href="#contact">Contato</a>
+            </div>
+                <div class="footerContact">
+                    <h4>Contato</h4>
+                        <p><a href="mailto:contato@agenciacriativaweb.com">contato@agenciacriativaweb.com</a></p>
+                        <p><a href="https://wa.me/551199999999" target="_blank">(11) 99999-9999</a></p>
+                </div>
+    </div>
+        <div class="footerBottom">
+            <p>© 2026 Agência Criativa Web. Todos os direitos reservados.</p>
+        </div>
+</footer>
     <script src="botao.js"></script>
 </body>
 </html>
