@@ -1,7 +1,8 @@
 /* Previnindo o comportamento padrão do formulário */
 
-document.getElementById("send").addEventListener("click", evento => {
-    evento.preventDefault();
+const form = document.querySelector('.contact__form');
 
-    console.log("Funcionando perfeitamente!");
-})
+form.addEventListener('submit', function (evento) {
+    evento.preventDefault();
+    console.log('Formulário enviado com sucesso.');
+});

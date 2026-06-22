@@ -7,43 +7,59 @@
 
 body {
     background-color: #000000;
+    line-height: 1.6;
 }
 
-/* Header da página */
+img {
+    display: block;
+    max-width: 100%;
+}
 
-.pageHeader {
+/* Aqui criarei uma sessão "Geral" para as sessões, para ficarem todas similares em dimensões. */
+/* Utilitários */
+
+.about, .services, .testimonials, .contact {
+    background:#f9f9f9;
+    border-radius:10px;
+    margin-top:1%;
+}
+
+.section-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 40px;
+}
+
+/* Alterações no header com as classes */
+
+.header {
     margin: 0;
     background-color: #f9f9f9;
-}
-
-#home {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.companyLogo {
-    width: 18%;
-    margin: 0;
+.header__logo {
+    width: 20%;
     user-select: none;
 }
 
-.companyLogo img {
+.header__logo img {
     width: 50%;
     user-select: none;
 }
 
-.navbar {
+.header__menu {
     position: relative;
     display: flex;
     align-items: center;
 }
 
-#menuToggle {
+.header__toggle {
     display: none;
 }
 
-.hamburguer {
+.header__hamburguer {
     font-size: 30px;
     cursor: pointer;
     margin-right: 20px;
@@ -53,7 +69,7 @@ body {
     user-select: none;
 }
 
-.navbar nav {
+.header__nav {
     display: none;
     position: absolute;
     right: 50px;
@@ -61,11 +77,11 @@ body {
     transform: translateY(-50%);
 }
 
-#menuToggle:checked + .hamburguer + nav {
+.header__toggle:checked + .header__hamburguer + .header__nav {
     display: block;
 }
 
-.navbar ul {
+.header__list {
     display: flex;
     flex-direction: row;
     gap: 100px;
@@ -74,7 +90,7 @@ body {
     padding: 0;
 }
 
-.navbar a {
+.header__link {
     text-decoration: none;
     color: #000000;
     font-size: large;
@@ -83,28 +99,17 @@ body {
     font-weight: bold;
 }
 
-.navbar a:hover {
+.header__link:hover {
     background-color: #0000003a;
 }
 
-/* Sessão Sobre */
+/* Alterações na sessão Sobre com as classes */
 
-#aboutUs {
-    background-color: #f9f9f9;
-    margin-top: 1%;
-    display: flex;
-    flex-direction: column;
-    padding: 20px 40px 40px 40px ;
-    border-radius: 5px;
+.about {
+    padding: 50px;
 }
 
-.aboutUsHeading {
-    margin-top: 20px;
-    letter-spacing: -1px;
-    font-size: 3em;
-}
-
-.aboutUsContent {
+.about__content {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -112,34 +117,26 @@ body {
     font-size: 20px;
 }
 
-#aboutUs img {
+.about__image {
     width: 40%;
     display: block;
     border-radius: 60px;
     border: 1px solid black;
 }
 
-/* Sessão de serviços */ 
+/* Alteração na sessão de serviços com as classes */ 
 
-#services {
-    background-color: #f9f9f9;
-    margin-top: 1%;
-    padding: 60px 40px;
-    border-radius: 5px;
+.services {
+    padding: 50px;
 }
 
-.servicesHeading {
-    font-size: 3rem;
-    margin-bottom: 50px;
-}
-
-.servicesAndDescriptions {
+.services__list {
     display: flex;
     flex-direction: column;
     gap: 30px;
 }
 
-.servicesAndDescriptions details {
+.services__item {
     background: #f3eef8;
     border-radius: 18px;
     padding: 20px 28px;
@@ -147,11 +144,11 @@ body {
     transition: 0.3s;
 }
 
-.servicesAndDescriptions details:hover {
-    transform: translateY(-5px);
+.services__item:hover {
+    transform: translateY(-3px);
 }
 
-.servicesAndDescriptions summary {
+.services__summary {
     display: flex;
     align-items: center;
     gap: 18px;
@@ -162,7 +159,7 @@ body {
     user-select: none;
 }
 
-.servicesAndDescriptions summary::before {
+.services__summary::before {
     content: "✓";
     width: 42px;
     height: 42px;
@@ -176,7 +173,7 @@ body {
     flex-shrink: 0;
 }
 
-.servicesAndDescriptions p {
+.services__description {
     margin-top: -5px;
     margin-left: 60px;
     color: #444;
@@ -184,100 +181,67 @@ body {
     font-size: 1.1rem;
 }
 
-.servicesAndDescriptions details[open] {
+.services__item[open] {
     background: #f8f4fd;
 }
 
-/* Sessão DEPOIMENTOS */
+/* Alterações na sessão de depoimentos com as classes */
 
-#reviews {
-    background: #f9f9f9;
-    padding: 80px 60px;
-    margin-top: 1%;
-    border-radius: 5px;
+.testimonials {
+    padding: 50px;
+    background: #fff;
+    border: 1px solid #d9d9d9;
+    border-radius: 16px;
+    transition: .3s;
 }
 
-.reviewHeading h2 {
-    margin-bottom: 50px;
-    font-size: 3rem;
-}
-
-.clientReview{
+.testimonials__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 40px;
 }
 
-.firstReview,
-.secondReview,
-.thirdReview {
-    background: #ffffff;
-    border: 1px solid #d9d9d9;
-    border-radius: 16px;
-    padding: 35px;
-    transition: .3s;
-}
-
-.firstReview:hover,
-.secondReview:hover,
-.thirdReview:hover {
+.testimonials:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.08);
 }
 
-.firstReview::before,
-.secondReview::before,
-.thirdReview::before {
-    content:"★★★★★";
-    display: block;
-    margin-bottom: 25px;
-    font-size: 22px;
-}
-
-.clientName {
+.testimonials__name {
     display: block;
     font-size: 1.6rem;
     margin-bottom: 10px;
 }
 
-.clientRole {
+.testimonials__role {
     display: block;
     color: grey;
     margin-bottom: 20px;
 }
 
-.clientReview p {
+.testimonials__text {
     line-height: 1.8;
+    font-style: italic;
 }
 
-/* Sessão Contato */ 
+/* alteração na sessão de contato com as classes */ 
 
-#contact {
-    background: #f9f9f9;
-    padding: 80px 60px;
-    margin-top: 1%;
-    margin: 1% 200px 0 200px;
-    border-radius: 12px;
+.contact {
+    margin-inline: clamp(20px, 10vw, 220px);
+    padding: 50px;
 }
 
-.contactHeading {
-    font-size: 3rem;
-    margin-bottom: 50px;
-    text-align: center;
-}
-
-.contactForm {
+.contact__container {
     max-width: 700px;
     margin: 0 auto;
 }
 
-.contactForm form {
+.contact__form {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 25px;
 }
 
-.contactForm input {
+.contact__input {
     width: 100%;
     padding: 18px;
     border: 1px solid #d9d9d9;
@@ -288,12 +252,12 @@ body {
     transition: .2s;
 }
 
-.contactForm input:focus {
+.contact__input:focus {
     border-color: #6d28d9;
     box-shadow: 0 0 10px rgba(109,40,217,.15);
 }
 
-#send{
+.contact__button {
     grid-column: 1 / -1;
     padding: 18px;
     border: none;
@@ -306,14 +270,14 @@ body {
     transition: .3s;
 }
 
-#send:hover {
+.contact__button:hover {
     transform: translateY(-2px);
     background: #4a24a7;
 }
 
-/* RodaPé */ 
+/* rodapé reestruturado também com a adição de classes */ 
 
-footer {
+.footer {
     margin-top: 60px;
     background: linear-gradient(180deg, #0d0d0d, #000000);
     color: #ffffff;
@@ -321,7 +285,7 @@ footer {
     border-top: 1px solid rgba(255,255,255,0.08);
 }
 
-.footerContent {
+.footer__content {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
     gap: 60px;
@@ -329,48 +293,43 @@ footer {
 }
 
 
-.footerBrand h3 {
+.footer__title {
     font-size: 2rem;
     color: #8f65ff;
     margin-bottom: 15px;
 }
 
-.footerBrand p {
+.footer__description{
     color: #cfcfcf;
     line-height: 1.8;
     max-width: 420px;
 }
 
-.footerLinks h4,
-.footerContact h4 {
+.footer__subtitle {
     font-size: 1.2rem;
     margin-bottom: 10px;
     color: white;
 }
 
-.footerLinks a {
+.footer__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer__link {
     color: #bbbbbb;
     text-decoration: none;
     transition: .25s;
     padding: 5px;
 }
 
-.footerLinks a:hover {
+.footer__link:hover {
     color: #8f65ff;
     transform: translateX(5px);
 }
 
-.footerContact p a{
-    color: #bbbbbb;
-    text-decoration: none;
-}
-
-.footerContact p a:hover {
-    color: #8f65ff;
-    transform: translateX(5px);
-}
-
-.footerBottom {
+.footer__bottom {
     border-top: 1px solid rgba(255,255,255,0.08);
     padding-top: 25px;
     text-align: center;
@@ -379,103 +338,84 @@ footer {
 }
 
 
+/* Todas as alterações na página principal foram feitas nos @medias também (alteração de classes e IDs) */
+/* Também foi removida a sessão para telas maiores que as de tablet, pois as dimensões a partir da resolução max imposta já funciona com o CSS geral. */
 /* Mobile */
-
 
 @media (max-width: 767px){
 
-#home{
+.header {
     padding: 20px;
 }
 
-.companyLogo{
+.header__logo {
     width: 35%;
 }
 
-    .companyLogo img{
+.header__logo img {
     width: 100%;
 }
 
-.navbar ul{
+.header__list {
     flex-direction: column;
-    gap: 13px;
+    gap: 5px;
     margin: 0;
 }
 
-.navbar nav{
+.header__nav {
     right: 70px;
     
 }
 
-.hamburguer{
+.header__hamburguer {
     font-size: 38px;
 }
 
-#aboutUs{
-    padding: 30px;
-}
-
-.aboutUsHeading{
-    font-size: 2rem;
-}
-
-.aboutUsContent{
+.about__content {
     flex-direction: column;
     gap: 40px;
     font-size: 1rem;
 }
 
-#aboutUs img{
+.about__image {
     width: 100%;
 }
 
-#services{
-    padding: 40px 25px;
-}
-
-.servicesHeading{
+.section-title {
     font-size: 2rem;
 }
 
-.servicesAndDescriptions summary{
-    font-size: 1.1rem;
+.services {
+    padding: 40px 25px;
 }
 
-.servicesAndDescriptions p{
+.services__description {
     margin-left: 0;
     margin-top: 15px;
 }
 
-#reviews{
+.testimonials {
     padding: 40px 25px;
 }
 
-.reviewHeading h2{
-    font-size: 2rem;
-}
-
-.clientReview{
+.testimonials__list {
     grid-template-columns: 1fr;
 }
 
-#contact{
+.contact {
     margin: 1% 20px;
     padding: 40px 25px;
 }
 
-.contactHeading{
-    font-size: 2rem;
-}
-
-.contactForm form{
+.contact__form {
     grid-template-columns: 1fr;
 }
 
-footer{
+.footer {
     padding: 40px 25px;
 }
 
-.footerContent{
+.footer__content {
     grid-template-columns: 1fr;
     gap: 40px;
 }
@@ -485,68 +425,79 @@ footer{
 
 @media (min-width:768px) and (max-width:1024px){
 
-.companyLogo{
-    width: 25%;
+.header {
+    padding: 20px;
 }
 
-.navbar ul{
-    gap: 7px;
-    margin: 0 6rem;
+.header__logo {
+    width: 35%;
 }
 
-.aboutUsContent{
+.header__logo img {
+    width: 100%;
+}
+
+.header__list {
     flex-direction: column;
-    gap: 50px;
+    gap: 19px;
+    margin: 0;
 }
 
-#aboutUs img{
-    width: 80%;
+.header__nav {
+    right: 70px;
+    
 }
 
-.clientReview{
-    grid-template-columns: repeat(2,1fr);
+.header__hamburguer {
+    font-size: 38px;
 }
 
-#contact{
-    margin: 1% 60px;
+.about__content {
+    flex-direction: column;
+    gap: 40px;
+    font-size: 1rem;
 }
 
-.contactForm form{
+.about__image {
+    width: 100%;
+}
+
+.section-title {
+    font-size: 2rem;
+}
+
+.services {
+    padding: 40px 25px;
+}
+
+.services__description {
+    margin-left: 0;
+    margin-top: 15px;
+}
+
+.testimonials {
+    padding: 40px 25px;
+}
+
+.testimonials__list {
     grid-template-columns: 1fr;
 }
 
-.footerContent{
-    grid-template-columns: 1fr 1fr;
-}
-}
-
-/* Notebooks */
-
-@media (min-width:1025px) and (max-width:1200px){
-
-.companyLogo{
-    width: 20%;
- }
-
-.navbar ul{
-    gap: 50px;
-    margin: 0 10rem;
+.contact {
+    margin: 1% 20px;
+    padding: 40px 25px;
 }
 
-.aboutUsContent{
+.contact__form {
+    grid-template-columns: 1fr;
+}
+
+.footer {
+    padding: 40px 25px;
+}
+
+.footer__content {
+    grid-template-columns: 1fr;
     gap: 40px;
-    font-size: 18px;
-}
-
-#aboutUs img{
-    width: 45%;
-}
-
-.clientReview{
-    grid-template-columns: repeat(2,1fr);
-}
-
-#contact{
-    margin: 1% 100px;
 }
 }
