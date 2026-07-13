@@ -1,0 +1,128 @@
+@use "variaveis" as *;
+@use "mixins" as *;
+
+//Menu Hamburguer
+
+#menu-toggle {
+    display: none;
+}
+
+.hamburguer {
+    font-size: 30px;
+    cursor: pointer;
+    margin-right: $esp-sm;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+    user-select: none;
+}
+
+//Links de navegação
+
+.header__nav {
+    a{
+        text-decoration: none;
+        color: $cor-preta;
+        font-size: large;
+        padding: $esp-xs;
+        font-family: $fonte-principal;
+        font-weight: bold;
+        
+
+            &:hover {
+                background-color: $cor-hover-menu;
+            }
+        }
+}
+
+//Cards de serviços
+
+.services__list {
+    .services__item {
+        background: $cor-card;
+        border-radius: $radius-xl;
+        padding: $esp-sm 28px;
+        box-shadow: $sombra-card;
+        transition: $transition-normal;
+
+            &:hover {
+                transform: translateY(-5px);
+            }
+
+            &[open] {
+                background: $cor-card-hover;
+            }
+        }
+}
+
+    .services__summary {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        list-style: none;
+        cursor: pointer;
+        font-size: $texto-xl;
+        font-weight: 700;
+        user-select: none;
+
+            &::before {
+                content: "✓";
+                width: 42px;
+                height: 42px;
+                border-radius: $radius-circular;
+                background: $cor-icone;
+                color: $cor-roxa;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 20px;
+                flex-shrink: 0;
+            }
+
+    .services__description {
+            margin-top: -5px;
+            margin-left: 60px;
+            color: $cor-texto;
+            line-height: 1.7;
+            font-size: $texto-medio;
+        }
+}
+
+//Cards de depoimentos
+
+.reviews__card{
+    @include card;
+
+    &::before {
+        content: "★★★★★";
+        display: block;
+        margin-bottom: 25px;
+        font-size: 22px;
+    }
+}
+
+.reviews__name {
+    display: block;
+    font-size: $texto-xxl;
+    margin-bottom: $esp-xs;
+}
+
+.reviews__role {
+    display: block;
+    color: grey;
+    margin-bottom: $esp-sm;
+}
+
+//Formulário
+
+.contact__form {
+    input {
+        @include input;
+    }
+}
+
+//Botão
+
+#send {
+    @include button($cor-roxa, $cor-roxa-hover);
+}

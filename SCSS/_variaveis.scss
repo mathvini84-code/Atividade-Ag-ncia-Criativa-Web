@@ -1,0 +1,72 @@
+// Fontes utilizadas
+$fonte-principal: "MontSerrat", sans-sefir;
+
+//Cores
+$cor-preta: #000;
+$cor-branca: #fff;
+$cor-fundo: #f9f9f9;
+$cor-roxa: #5a2fc2;
+$cor-roxa-hover: #4a24a7;
+$cor-roxa-clara: #8f65ff;
+$cor-card: #f3eef8;
+$cor-card-hover: #f8f4fd;
+$cor-icone: #e4d8f8;
+$cor-texto: #444444;
+$cor-cinza: #bbbbbb;
+$cor-cinza-claro: #d9d9d9;
+$cor-cinza-medio: #8d8d8d;
+$cor-cinza-escuro: #cfcfcf;
+$cor-hover-menu: #0000003a;
+$cor-footer: #0d0d0d;
+$cor-borda-footer: rgba(255,255,255, 0.08);
+$cor-sombra: rgba(0, 0, 0, 0.08);
+$cor-foco: rgba (109, 40, 217, 0.15);
+
+//Espaçamentos
+
+$esp-xxs: 5px;
+$esp-xs: 10px;
+$esp-sm: 20px;
+$esp-md: 25px;
+$esp-lg: 30px;
+$esp-xl: 40px;
+$esp-xxl: 50px;
+$esp-3xl: 60px;
+$esp-4xl: 80px;
+
+//Bordas
+
+$radius-pequeno: 5px;
+$radius-medio: 12px;
+$radius-grande: 16px;
+$radius-xl: 18px;
+$radius-xxl: 60px;
+$radius-circular: 50%;
+
+//Tamanhos de fonte
+
+$texto-pequeno: .95rem;
+$texto-normal: 1rem;
+$texto-medio: 1.1rem;
+$texto-grande: 1.2rem;
+$texto-xl: 1.5rem;
+$texto-xxl: 1.6rem;
+$titulo: 2rem;
+$titulo-grande: 3rem;
+
+//Transições
+
+$transition-rapida: .2s;
+$transition-normal: .3s;
+
+//Sombras
+
+$sombra-card: 0 4px 12px rgba(0,0,0, 0.08);
+$sombra-hover: 0 10px 20px rgba(0,0,0, 0.08);
+$sombra-focus: 0 0 10px rgba(109, 40, 217, 0.15);
+
+//Breakpoints de resolução
+
+$mobile: 767px;
+$tablet: 1024px;
+$notebook: 1200px;

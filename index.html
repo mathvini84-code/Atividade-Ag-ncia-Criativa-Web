@@ -10,40 +10,40 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="pageHeader">
+    <div class="page-header">
         <header id="home">
-            <div class="companyLogo">
+            <div class="header__logo">
                     <img src="CSS/logo.png" alt="logo Agência Criativa Web" width="100%">
             </div>
-                <div class="navbar">
-                    <input type="checkbox" id="menuToggle">
-                        <label for="menuToggle" class="hamburguer">
+                <div class="header__nav">
+                    <input type="checkbox" id="menu-toggle">
+                        <label for="menu-toggle" class="hamburguer">
                             ☰
                         </label>
                             <nav>
-                                <ul>
-                                    <li><a href="#home" target="_self">Home</a></li>
-                                    <li><a href="#aboutUs">Sobre</a></li>
-                                    <li><a href="#services">Serviços</a></li>
-                                    <li><a href="#reviews">Depoimentos</a></li>
-                                    <li><a href="#contact">Contato</a></li>
+                                <ul class="header__menu">
+                                    <li class="header__item"><a class="header__link" href="#home" target="_self">Home</a></li>
+                                    <li class="header__item"><a class="header__link" href="#about">Sobre</a></li>
+                                    <li class="header__item"><a class="header__link" href="#services">Serviços</a></li>
+                                    <li class="header__item"><a class="header__link" href="#reviews">Depoimentos</a></li>
+                                    <li class="header__item"><a class="header__link" href="#contact">Contato</a></li>
                                 </ul>
                             </nav>
                 </div>
         </header>
     </div>
     <main>
-            <div id="aboutUs">
-                <h2 class="aboutUsHeading">Sobre a Agência</h2>
-                    <div class="aboutUsContent">
-                    <p class="aboutUsText">Somos uma agência de marketing digital apaixonada por transformar ideias em experiências digitais de impacto.<br>
+            <div id="about">
+                <h2 class="about__title">Sobre a Agência</h2>
+                    <div class="about__content">
+                    <p class="about__text">Somos uma agência de marketing digital apaixonada por transformar ideias em experiências digitais de impacto.<br>
                     Na Agência Criativa Web, desenvolvemos estratégias criativas e soluções personalizadas para empresas que buscam crescer, fortalecer sua marca e conquistar novos clientes no ambiente online.<br>
                     Combinamos criatividade, tecnologia e estratégia para criar projetos que vão além do visual: entregamos resultados que geram conexão, presença digital e crescimento para o seu negócio.<br><br>
                     🚀 Nossa missão:<br>
                     Ajudar marcas a evoluírem no mundo digital através de soluções inovadoras, eficientes e pensadas para cada objetivo.<br><br>
                     <strong>Agência Criativa Web — Criando conexões, construindo resultados.</strong>
                     </p>
-                    <img
+                    <img class="about__image"
                         src="CSS/reuniao-agencia-640w.webp"
                         srcset="
                             CSS/reuniao-agencia-320w.webp 320w,
@@ -55,80 +55,80 @@
                     </div>
                 </div>
                 <div id="services">
-                    <h2 class="servicesHeading">Serviços</h2>
-                        <div class="servicesAndDescriptions">
+                    <h2 class="services__title">Serviços</h2>
+                        <div class="services__list">
                             <!-- Item Design gráfico-->
-                            <details>
-                                <summary>
+                            <details class="services__item">
+                                <summary class="services__summary">
                                     <strong>Design Gráfico</strong>
                                 </summary>
-                                <p>
+                                <p class="services__description">
                                     Criamos artes, identidades visuais, posts para redes sociais e materiais digitais que valorizam a sua marca.
                                 </p>
                             </details>
                             <!-- Item Desenvolvimento WEB-->
-                            <details>
-                                <summary>
+                            <details class="services__item">
+                                <summary class="services__summary">
                                     <strong>Desenvolvimento WEB</strong>
                                 </summary>
-                                <p>
+                                <p class="services__description">
                                     Desenvolvemos sites modernos, rápidos e responsivos, criando uma presença digital profissional para a sua empresa se destacar!
                                 </p>
                             </details>
                             <!-- Item Branding-->
-                            <details>
-                                <summary>
+                            <details class="services__item">
+                                <summary class="services__summary">
                                     <strong>Branding</strong>
                                 </summary>
-                                <p>
+                                <p class="services__description">
                                     Trabalhamos a construção da marca, identidade visual, posicionamento e percepção do público.
                                 </p>
                             </details>
                             <!-- Item Campanhas-->
-                            <details>
-                                <summary>
+                            <details class="services__item">
+                                <summary class="services__summary">
                                     <strong>Campanhas</strong>
                                 </summary>
-                                <p>
+                                <p class="services__description">
                                     Criamos estratégias e campanhas digitais para aumentar o alcance e gerar resultados.
                                 </p>
                             </details>
                             <!-- Item Ações, ativações e eventos-->
-                             <details>
-                                <summary>
+                             <details class="services__item">
+                                <summary class="services__summary">
                                     <strong>Ações, Ativações e eventos</strong>
                                 </summary>
-                                <p>
+                                <p class="services__description">
                                     Criamos experiências e ações interativas e criativas para conectar a sua marca ao público!
                                 </p>
                             </details>
                         </div>
                 </div>
                     <div id="reviews">
-                        <div class="reviewHeading">
-                            <h2>Depoimentos de clientes</h2>
+                        <div class="reviews__title">
+                            <h2 class="reviews__heading">Depoimentos de clientes</h2>
                         </div>
-                            <div class="clientReview">
-                                <div class="firstReview">
-                                <span class="clientName"><strong>Rafael Monteiro</strong></span><br>
-                                    <span class="clientRole"><strong>CEO & FOUNDER - Nexora Digital Solutions</strong></span>
-                                        <p style="font-style: italic;">"A Agência Criativa Web superou nossas expectativas. Desde o início, entenderam a essência da nossa marca e transformaram nossas ideias em uma identidade visual moderna e estratégica. O profissionalismo, criatividade e atenção aos detalhes fizeram toda a diferença para fortalecer nossa presença digital."</p>
+                            <div class="reviews__grid">
+                                <div class="reviews__card">
+                                <span class="reviews__name"><strong>Rafael Monteiro</strong></span><br>
+                                    <span class="reviews__role"><strong>CEO & FOUNDER - Nexora Digital Solutions</strong></span>
+                                        <p>"A Agência Criativa Web superou nossas expectativas. Desde o início, entenderam a essência da nossa marca e transformaram nossas ideias em uma identidade visual moderna e estratégica. O profissionalismo, criatividade e atenção aos detalhes fizeram toda a diferença para fortalecer nossa presença digital."</p>
                                 </div>
-                                <div class="secondReview">
-                                    <span class="clientName"><strong>Camila Andrade</strong></span><br>
-                                        <span class="clientRole"><strong>Diretora de marketing - Vértice Técnologia Criativa</strong></span>
-                                            <p style="font-style: italic;">"Trabalhar com a Agência Criativa Web foi uma experiência excelente. A equipe trouxe soluções criativas, campanhas bem planejadas e um olhar estratégico que ajudou nossa empresa a se conectar melhor com o público. O resultado foi uma comunicação mais forte e profissional."</p>
+                                <div class="reviews__card">
+                                    <span class="reviews__name"><strong>Camila Andrade</strong></span><br>
+                                        <span class="reviews__role"><strong>Diretora de marketing - Vértice Técnologia Criativa</strong></span>
+                                            <p>"Trabalhar com a Agência Criativa Web foi uma experiência excelente. A equipe trouxe soluções criativas, campanhas bem planejadas e um olhar estratégico que ajudou nossa empresa a se conectar melhor com o público. O resultado foi uma comunicação mais forte e profissional."</p>
                                 </div>
-                                <div class="thirdReview">
-                                    <span class="clientName"><strong>Felipe Martins</strong></span><br>
-                                        <span class="clientRole"><strong>Diretor executivo de produtos digitais - Aurora Labs Brasil</strong></span>
-                                            <p style="font-style: italic;">"Encontramos na Agência Criativa Web um parceiro estratégico para nossos projetos digitais. O desenvolvimento do nosso site e as soluções apresentadas elevaram o nível da nossa marca. A equipe entrega qualidade, inovação e resultados de forma muito eficiente."</p>
+                                <div class="reviews__card">
+                                    <span class="reviews__name"><strong>Felipe Martins</strong></span><br>
+                                        <span class="reviews__role"><strong>Diretor executivo de produtos digitais - Aurora Labs Brasil</strong></span>
+                                            <p>"Encontramos na Agência Criativa Web um parceiro estratégico para nossos projetos digitais. O desenvolvimento do nosso site e as soluções apresentadas elevaram o nível da nossa marca. A equipe entrega qualidade, inovação e resultados de forma muito eficiente."</p>
                                 </div>
                             </div>
                     </div>
                         <div id="contact">
-                            <h2 class="contactHeading">Entre em contato</h2>
-                                <div class="contactForm">
+                            <h2 class="contact__title">Entre em contato</h2>
+                                <div class="contact__form">
                                     <form>
                                         <label for="name">
                                             <input id="name" name="name" type="text" placeholder="Nome" required>
@@ -149,26 +149,26 @@
                         </div>
     </main>
        <footer>
-    <div class="footerContent">
-        <div class="footerBrand">
+    <div class="footer__content">
+        <div class="footer__brand">
             <h3>Agência Criativa Web</h3>
                 <p>Criando conexões, construindo resultados.</p>
         </div>
-            <div class="footerLinks">
+            <div class="footer__links">
                 <h4>Navegação</h4>
                     <a href="#home">Home</a>
-                    <a href="#aboutUs">Sobre</a>
+                    <a href="#about">Sobre</a>
                     <a href="#services">Serviços</a>
                     <a href="#reviews">Depoimentos</a>
                     <a href="#contact">Contato</a>
             </div>
-                <div class="footerContact">
+                <div class="footer__contact">
                     <h4>Contato</h4>
                         <p><a href="mailto:contato@agenciacriativaweb.com">contato@agenciacriativaweb.com</a></p>
                         <p><a href="https://wa.me/551199999999" target="_blank">(11) 99999-9999</a></p>
                 </div>
     </div>
-        <div class="footerBottom">
+        <div class="footer__bottom">
             <p>© 2026 Agência Criativa Web. Todos os direitos reservados.</p>
         </div>
 </footer>

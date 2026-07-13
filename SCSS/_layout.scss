@@ -1,0 +1,479 @@
+@use "variaveis" as *;
+@use "mixins" as *;
+
+//Header da pág
+
+.page-header {
+    margin: 0;
+    background-color: $cor-fundo;
+}
+
+#home {
+    @include flex-between;
+}
+
+.header__logo {
+    width: 18%;
+    margin: 0;
+    user-select: none;
+
+    img {
+        width: 50%;
+    }
+}
+
+.header__nav {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    nav {
+        display: none;
+        position: absolute;
+        right: 50px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .header__menu {
+        display: flex;
+        flex-direction: row;
+        gap: 100px;
+        margin: 0 30em 0 5em;
+        padding: 0;
+    }
+}
+
+#menu-toggle {
+    display: none;
+
+    &:checked + .hamburguer + nav {
+        display: block;
+    }
+}
+
+//Sessão sobre
+
+#about {
+    @include section($esp-sm $esp-xl $esp-xl);
+}
+
+.about__title {
+    @include title;
+    margin-top: $esp-sm;
+    letter-spacing: -1px;
+}
+
+.about__content {
+    @include flex-between;
+    gap: 70px;
+    font-size: 20px;
+}
+
+.about__text {
+    line-height: 1.8;
+}
+
+.about__image {
+    width: 40%;
+    border-radius: $radius-xxl;
+    border: 1px solid $cor-preta;
+    flex-shrink: 0;
+}
+
+//Serviços
+
+#services {
+    @include section($esp-3xl, $esp-xl);
+}
+
+.services__title {
+    @include title;
+}
+
+.services__list {
+    @include flex_column(30px);
+}
+
+//Depoimentos
+
+#reviews {
+    @include section($esp-4xl $esp-3xl);
+}
+
+.reviews__title {
+    margin-bottom: $esp-xxl;
+}
+
+.reviews__heading {
+    @include title;
+    margin-bottom: 0;
+}
+
+.reviews__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $esp-xl;
+}
+
+.reviews__card p {
+    line-height: 1.8;
+    font-style: italic;
+}
+
+//Contato
+
+#contact {
+    @include section($esp-4xl $esp-3xl);
+    margin: 0;
+    border-radius: $radius-medio;
+}
+
+.contact__title {
+    @include title;
+    text-align: center;
+}
+
+.contact__form {
+    max-width: 700px;
+    margin: 0 auto;
+
+    form {
+        display: grid;
+        grid-template-columns: 1fr 1 fr;
+        gap: $esp-md
+    }
+}
+
+//Footer
+
+footer {
+    margin-top: $esp-3xl;
+    background: linear-gradient(180deg, $cor-footer, $cor-preta);
+    color: $cor-branca;
+    padding: $esp-3xl $esp-4xl $esp-lg;
+    border-top: 1px solid $cor-borda-footer;
+}
+
+.footer__content {
+    display: grid;
+    grid-template-columns: 2fr 1 fr 1 fr;
+    gap: $esp-3xl;
+    margin-bottom: $esp-xxl;
+}
+
+.footer__brand {
+    h3 {
+        font-size: $titulo;
+        color: $cor-roxa-clara;
+        margin-bottom: $esp-sm;
+    }
+
+    p {
+        color: $cor-cinza-escuro;
+        line-height: 1.8;
+        max-width: 420px;
+    }
+}
+
+.footer__links, .footer__contact {
+    h4 {
+        font-size: $texto-grande;
+        margin-bottom: $esp-xs;
+        color: $cor-branca;
+    }
+}
+
+.footer__links {
+    a {
+        color: $cor-cinza;
+        padding: $esp-xxs;
+        @include link-hover($cor-roxa-clara);
+    }
+}
+
+.footer__contact {
+    p {
+        a{
+            color:$cor-cinza;
+            @include link-hover($cor-roxa-clara);
+        }
+    }
+}
+
+.footer__bottom {
+    border-top: 1px solid $cor-borda-footer;
+    padding-top: $esp-md;
+    text-align: center;
+    color: $cor-cinza-medio;
+    font-size: $texto-pequeno;
+}
+
+//Media queries
+
+//Celulares
+
+@media (min-width: 200px) and (max-width: $mobile) {
+    #home {
+        padding: $esp-sm;
+        position: relative;
+    }
+
+    .header__logo {
+        width: 35%;
+
+        img {
+            width: 100%;
+        };
+    }
+
+    .header__nav {
+        position: relative;
+
+        .header__menu {
+        display: block;
+        flex-direction: column;
+        gap: 5px;
+        margin: 0;
+        padding: 5px;
+        text-align: center;
+    }
+
+    nav {
+        position: absolute;
+        top: calc(100% + 5px);
+        right: 0;
+        display: none;
+        width: 180px;
+        background: $cor-fundo;
+        border-radius: $radius-medio;
+        box-shadow: $sombra-card;
+        padding: $esp-sm;
+        z-index: 999;
+        transform: none;
+    }
+}
+
+    #menu-toggle:checked + .hamburguer + nav {
+        display: block;
+    }
+
+    .header__item {
+        width: 100%;
+    }
+
+    .header__link {
+        display: block;
+        padding: 10px;
+    }
+
+    .hamburguer {
+        font-size: 38px;
+    }
+
+    #about {
+        padding: $esp-lg;
+    }
+
+    .about__title {
+        font-size: $titulo;
+    }
+
+    .about__content {
+        flex-direction: column;
+        gap: $esp-xl;
+        font-size: $texto-normal;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    #services {
+        padding: $esp-xl $esp-md;
+    }
+
+    .services__title {
+        font-size: $titulo;
+    }
+
+    .services__summary {
+        font-size: $texto-medio;
+    }
+
+    .services__description {
+        margin-left: 0;
+        margin-top: 15px;
+    }
+
+    #reviews {
+        padding: $esp-xl $esp-md;
+    }
+
+    .reviews__title {
+        font-size: $titulo;
+    }
+
+    .reviews__grid {
+        grid-template-columns: 1fr;
+    }
+
+    #contact {
+        margin: 1% $esp-sm;
+        padding: $esp-xl $esp-md;
+    }
+
+    .contact__title {
+        font-size: $titulo;
+    }
+
+    .contact__form form {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        padding: $esp-xl $esp-md;
+    }
+
+    .footer__content {
+        grid-template-columns: 1fr;
+        gap: $esp-xl;
+    }
+}
+
+//Tablets
+
+@media (min-width: calc($mobile + 1px)) and (max-width: $tablet) {
+    .header__logo {
+        width: 25%;
+    }
+
+    .header__nav {
+    position: relative;
+
+    nav {
+        position: absolute;
+        top: calc(100% + 10px);
+        right: 0;
+
+        display: none;
+        width: 220px;
+
+        background: $cor-fundo;
+        border-radius: $radius-medio;
+        box-shadow: $sombra-card;
+        padding: $esp-sm;
+
+        transform: none;
+        z-index: 999;
+    }
+
+    .header__menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: $esp-xs;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+    .header__item {
+        width: 100%;
+        text-align: center;
+    }
+
+    .header__link {
+        display: block;
+        padding: $esp-xs;
+    }
+
+    .about__content {
+        flex-direction: column;
+        gap: $esp-xxl;
+
+        img {
+            width: 80%;
+        }
+    }
+
+    .reviews__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #contact {
+        margin: 1% $esp-3xl;
+    }
+
+    .contact__form form {
+        grid-template-columns: 1fr;
+    }
+
+    .footer__content {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+//Notebooks
+
+@media (min-width: calc($tablet + 1px)) {
+    .header__logo {
+        width: 20%;
+    }
+
+   .header__nav {
+    position: relative;
+
+    nav {
+        position: absolute;
+        top: calc(100% + 10px);
+        right: 0;
+
+        display: none;
+        width: 220px;
+
+        background: $cor-fundo;
+        border-radius: $radius-medio;
+        box-shadow: $sombra-card;
+        padding: $esp-sm;
+
+        transform: none;
+        z-index: 999;
+    }
+
+    .header__menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: $esp-xs;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+    .header__item {
+        width: 100%;
+        text-align: center;
+    }
+
+    .header__link {
+        display: block;
+        padding: $esp-xs;
+    }
+    .about__content {
+        gap: $esp-xl;
+        font-size: 18px;
+
+        img {
+            width: 45%;
+        }
+    }
+
+    .reviews__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #contact {
+        margin: 1% 100px;
+    }
+}

@@ -1,0 +1,70 @@
+@use "variaveis" as *;
+
+//Reset
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+//Body
+
+body {
+    background-color: $cor-preta;
+    font-family: $fonte-principal;
+    color: $cor-texto;
+    line-height: 1.5;
+}
+
+//Imagens
+
+img {
+    display: block;
+    max-width: 100%;
+    user-select: none;
+}
+
+//Links 
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+//Listas
+
+ul, ol {
+    list-style: none;
+}
+
+//Formulario
+
+button, input, textarea, select {
+    font: inherit;
+    font-family: inherit;
+}
+
+//Detalhes (sessão dos serviços)
+
+summary {
+    cursor: pointer;
+    list-style: none;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+//Seleção de texto
+
+::selection {
+    background-color: $cor-roxa;
+    color: $cor-branca;
+}
+
+//Scroll suave
+
+html {
+    scroll-behavior: smooth;
+}

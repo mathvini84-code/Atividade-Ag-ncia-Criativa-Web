@@ -1,0 +1,101 @@
+@use "variaveis" as *;
+
+//FlexBox
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin flex-column($gap: 0) {
+    display: flex;
+    flex-direction: column;
+    gap: $gap;
+}
+
+//Containers
+
+@mixin section($padding...) {
+    background-color: $cor-fundo;
+    padding: $padding;
+    margin-top: calc($esp-sm / 2); //1° Operador utilizado
+    border-radius: $radius-pequeno;
+}
+
+//Cards
+
+@mixin card {
+    background: $cor-branca;
+    border: 1px solid $cor-cinza-claro;
+    border-radius: $radius-grande;
+    padding: 35px;
+    transition: $transition-normal;
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: $sombra-hover;
+        }
+}
+
+//Botões
+
+@mixin button ($cor, $hover) {
+    padding: 18px;
+    border: none;
+    border-radius: $radius-medio;
+    background: $cor;
+    color: $cor-branca;
+    font-size: $texto-normal;
+    font-weight: 700;
+    cursor: pointer;
+    transition: $transition-normal;
+
+        &:hover {
+            background: $hover;
+            transform: translateY(-2px);
+        }
+}
+
+//Inputs
+
+@mixin input {
+    width: 100%;
+    padding: 18px;
+    border: 1px solid $cor-cinza-claro;
+    border-radius: $radius-medio;
+    font-size: $texto-normal;
+    font-family: inherit;
+    outline: none;
+    transition: $transition-rapida;
+
+        &:focus {
+            border-color: $cor-roxa;
+            box-shadow: $sombra-focus;
+        }
+}
+
+//Titulos
+
+@mixin title($size: $titulo-grande) {
+    font-size: $size;
+    margin-bottom: calc($esp-3xl - 10px); //2° Operador utilizado
+}
+
+//Links
+
+@mixin link-hover($color) {
+    text-decoration: none;
+    transition: .25s;
+
+        &:hover {
+            color: $color;
+            transform: translateX(5px);
+        }
+}
